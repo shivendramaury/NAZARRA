@@ -1,0 +1,216 @@
+
+@import "tailwindcss";
+
+/* ================================
+   NAZARRA - DESIGN SYSTEM
+================================ */
+
+:root {
+  --bg-primary: #F5F5F2;
+  --bg-secondary: #ECEBE6;
+  --bg-white: #FFFFFF;
+
+  --bg-dark: #171717;
+  --bg-dark-soft: #222222;
+
+  --text-primary: #171717;
+  --text-secondary: #858585;
+  --text-light: #F5F5F2;
+
+  --accent: #B69B78;
+  --border: #E7E4DD;
+
+  --font-body: 'DM Sans', sans-serif;
+  --font-heading: 'Manrope', sans-serif;
+}
+
+/* Reset */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 90px;
+}
+
+body {
+  margin: 0;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+}
+
+a {
+  text-decoration: none;
+}
+
+button {
+  font: inherit;
+  cursor: pointer;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+/* ================================
+   GLOBAL GRAIN TEXTURE
+================================ */
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 100;
+  opacity: 0.10;
+
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.28'/%3E%3C/svg%3E");
+}
+
+/* ================================
+   SECTION BACKGROUNDS
+================================ */
+
+.section-light {
+  background: var(--bg-primary);
+  color: var(--text-primary);
+}
+
+.section-soft {
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+}
+
+.section-dark {
+  background: var(--bg-dark);
+  color: var(--text-light);
+}
+
+/* ================================
+   SHARED CONTAINER
+================================ */
+
+.container-main {
+  width: min(100% - 48px, 1440px);
+  margin-inline: auto;
+}
+
+/* ================================
+   ACCENT
+================================ */
+
+.accent-text {
+  color: var(--accent);
+}
+
+/* ================================
+   SHARED BUTTON
+================================ */
+
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 13px 22px;
+  border-radius: 999px;
+  background: var(--bg-dark);
+  color: white;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.btn-primary:hover {
+  background: #333333;
+  transform: translateY(-2px);
+}
+
+/* ================================
+   SERVICE CARDS
+================================ */
+
+.service-card {
+  transition: transform 0.4s ease, border-color 0.4s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-6px);
+  border-color: var(--accent);
+}
+
+/* ================================
+   MOBILE NAVIGATION
+================================ */
+
+
+/* Frosted glass mobile navigation */
+
+.mobile-menu-panel {
+  background: rgba(245, 245, 242, 0.82);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+
+  border: 1px solid rgba(255, 255, 255, 0.55);
+
+  box-shadow:
+    0 12px 35px rgba(0, 0, 0, 0.06),
+    inset 0 1px 0 rgba(255, 255, 255, 0.6);
+}
+
+
+.mobile-menu-panel .mobile-cta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  width: 100%;
+  padding: 16px 24px;
+
+  background-color: var(--bg-dark);
+  color: #FFFFFF;
+
+  border-radius: 999px;
+  font-size: 15px;
+  font-weight: 500;
+
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.mobile-menu-panel .mobile-cta:hover {
+  background-color: var(--accent);
+  color: #FFFFFF;
+}
+
+/* ================================
+   ACCESSIBILITY
+================================ */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* ================================
+   RESPONSIVE
+================================ */
+
+@media (max-width: 640px) {
+  .container-main {
+    width: min(100% - 32px, 1440px);
+  }
+}
