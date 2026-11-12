@@ -214,3 +214,36 @@ body::before {
     width: min(100% - 32px, 1440px);
   }
 }
+
+
+/* Infinite Our Work Slider */
+.work-marquee {
+  width: 100%;
+  overflow: hidden;
+}
+
+.work-track {
+  animation: work-scroll 38s linear infinite;
+  will-change: transform;
+}
+
+.work-marquee:hover .work-track {
+  animation-play-state: paused;
+}
+
+@keyframes work-scroll {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* Accessibility: respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .work-track {
+    animation: none;
+  }
+}

@@ -2,6 +2,7 @@
 import './App.css'
 import Navbar from './components/layout/Navbar'
 import Home from './pages/Home'
+import Chatbot from './components/layout/Chatbot';
 
 function App() {
 
@@ -10,6 +11,7 @@ function App() {
     <>
       <Navbar/>
       <Home />
+      <Chatbot />
     </>
   )
 }

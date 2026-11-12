@@ -77,7 +77,7 @@ const About = () => {
           transition={{ duration: 0.7, delay: 0.1 }}
           className="mt-16 grid grid-cols-1 gap-8 rounded-2xl bg-[#171717] p-8 md:mt-24 md:grid-cols-2 md:gap-12 md:p-14 lg:p-16"
         >
-          <div>
+          <div className="!p-5 !pl-5">
             <span className="text-xs font-medium uppercase tracking-[0.2em] text-[#B69B78]">
               Our Vision
             </span>
@@ -88,7 +88,7 @@ const About = () => {
             </h3>
           </div>
 
-          <div className="flex flex-col justify-between">
+          <div className="flex flex-col justify-between !p-5 !pr-10">
             <p className="text-base leading-relaxed text-white/65 md:text-lg">
               We believe every business deserves the opportunity to grow
               beyond its physical boundaries. Our vision is to make digital
